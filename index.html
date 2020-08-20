@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COCO CODING</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<center><h2>COCO CODING</h2></center>
+	<div class="login">
+		<form onSubmit="return false">
+			<div>
+				<label>Nama Lengkap:</label>
+				<input  type="text" name="nomor" id="nomor" maxlength="13" autocomplete="off" onkeypress="return hanyaAngka(event)" value="62"/>
+			</div>
+			<div>
+                <button id="chat" name="chat">chat</button>
+			</div>
+        </form>
+        
+	</div>
+</body>
+<script type="text/javascript">
+    document.getElementById("chat").addEventListener("click", chatno);
+    
+    function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+		    return false;
+		  return true;
+		}
+        
+    function chatno(){
+        var no=document.getElementById("nomor").value;
+        window.location.href = "https://api.whatsapp.com/send?phone="+no+"&text=hallo";
+    }
+</script>
+</html>
